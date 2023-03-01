@@ -38,5 +38,70 @@ const siteContent = { // DO NOT CHANGE THIS OBJECT
     "accent-img": "http://localhost:9000/img/accent.png",
   },
 };
-
+//img
 console.log('project wired!')
+
+const logoImg = document.querySelector("#logo-img");
+logoImg.src = siteContent.images["logo-img"];
+
+const ctaImg = document.querySelector("#cta-img");
+ctaImg.src = siteContent.images["cta-img"];
+
+const accentImg = document.querySelector("#middle-img");
+accentImg.src = siteContent.images["accent-img"];
+
+
+//footer
+
+const footerLink = document.querySelector("footer a")
+footerLink.textContent = siteContent.footer.copyright
+footerLink.classList.add("bold")
+
+
+// contact
+
+const contact = document.querySelector("section.contact")
+contact.querySelector("h4").textContent = siteContent.contact["contact-h4"]
+contact.querySelector("p:nth-of-type(1)").textContent = siteContent.contact["address"]
+contact.querySelector("p:nth-of-type(2)").textContent = siteContent.contact["phone"]
+contact.querySelector("p:nth-of-type(3)").textContent = siteContent.contact["email"]
+
+// H4 BOTTOM CONTENT
+
+const bottomContent = document.querySelector(".bottom-content")
+const h4Bottom = bottomContent.querySelectorAll("h4")
+h4Bottom[0].textContent = siteContent["main-content"]["services-h4"]
+h4Bottom[1].textContent = siteContent["main-content"]["product-h4"]
+h4Bottom[2].textContent = siteContent["main-content"]["vision-h4"]
+
+// P BOTTOM CONTENT
+const pBottom = bottomContent.querySelectorAll("p")
+pBottom[0].textContent = siteContent["main-content"]["services-content"]
+pBottom[1].textContent = siteContent["main-content"]["product-content"]
+pBottom[2].textContent = siteContent["main-content"]["vision-content"]
+
+// H4 TOP CONTENT
+
+const topContent = document.querySelector(".top-content")
+const h4Top = topContent.querySelectorAll("h4")
+h4Top[0].textContent = siteContent["main-content"]["features-h4"]
+h4Top[1].textContent = siteContent["main-content"]["about-h4"]
+
+// P bottom content
+const pTop = topContent.querySelectorAll("p")
+pTop[0].textContent = siteContent["main-content"]["features-content"]
+pTop[1].textContent = siteContent["main-content"]["about-content"]
+
+//CTA
+
+document.querySelector(".cta .cta-text h1").textContent = siteContent.cta.h1
+document.querySelector(".cta .cta-text button").textContent = siteContent.cta.button
+
+//nav
+
+const navLinks = document.querySelectorAll("header nav a")
+const textLinks = Object.values(siteContent.nav)
+navLinks.forEach((links,indx)=>{
+links.textContent = textLinks[indx]
+links.classList.add("italic")
+})
